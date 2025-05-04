@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import EntradaTarea from './assets/Components/entradatareas';
-import ListaTareas from './assets/Components/listatareas';
+import EntradaTarea from './assets/components/entradatareas';
+import Producto from './assets/components/producto';
 
 function App() {
   const [tareas, setTareas] = useState([]);
@@ -26,18 +26,18 @@ function App() {
   };
 
   return (
-    <div className="contenedor">
+    <div className="contenedor" style={{ padding: 20, fontFamily: 'sans-serif' }}>
       <h1>Agregar Nueva Tarea</h1>
       <EntradaTarea alAgregar={agregarTarea} />
+
       <h2>Lista de Tareas:</h2>
-      <ListaTareas
-        tareas={tareas}
-        alRealizar={marcarComoRealizada}
-        alEliminar={eliminarTarea}
-      />
+
+      <hr style={{ margin: '40px 0' }} />
+
+      <h1>Productos</h1>
+      <Producto />
     </div>
   );
 }
 
 export default App;
-
