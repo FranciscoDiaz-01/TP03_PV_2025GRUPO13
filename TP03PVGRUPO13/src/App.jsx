@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import EntradaTarea from './assets/components/entradatareas';
+import ListaTareas from './assets/components/listatareas';
 import Producto from './assets/components/producto';
+
 
 function App() {
   const [tareas, setTareas] = useState([]);
@@ -31,6 +33,11 @@ function App() {
       <EntradaTarea alAgregar={agregarTarea} />
 
       <h2>Lista de Tareas:</h2>
+      <ListaTareas
+        tareas={tareas}
+        alRealizar={marcarComoRealizada}
+        alEliminar={eliminarTarea}
+      />
 
       <hr style={{ margin: '40px 0' }} />
 
