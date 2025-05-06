@@ -15,5 +15,4 @@ function listatareas({ tareas, alRealizar, alEliminar }) {
     </ul>
   );
 }
-
 export default listatareas;
