@@ -2,11 +2,10 @@ import { useState } from 'react';
 import EntradaTarea from './assets/components/entradatareas';
 import ListaTareas from './assets/components/listatareas';
 import Producto from './assets/components/producto';
-
+import CambiadorTema from './components/CambiadorTema';
 
 function App() {
   const [tareas, setTareas] = useState([]);
-
   const agregarTarea = (texto, fechaInicio) => {
     const nuevaTarea = {
       id: Date.now(),
@@ -16,19 +15,19 @@ function App() {
     };
     setTareas([...tareas, nuevaTarea]);
   };
-
   const marcarComoRealizada = (id) => {
     setTareas(tareas.map(tarea =>
       tarea.id === id ? { ...tarea, completada: !tarea.completada } : tarea
     ));
   };
-
   const eliminarTarea = (id) => {
     setTareas(tareas.filter(tarea => tarea.id !== id));
   };
-
   return (
     <div className="contenedor" style={{ padding: 20, fontFamily: 'sans-serif' }}>
+      {/* Botón para cambiar el tema */}
+      <CambiadorTema />
+
       <h1>Agregar Nueva Tarea</h1>
       <EntradaTarea alAgregar={agregarTarea} />
 
